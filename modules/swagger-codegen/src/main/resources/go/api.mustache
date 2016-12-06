@@ -55,11 +55,11 @@ func (a {{{classname}}}) {{{nickname}}}({{#allParams}}{{paramName}} {{{dataType}
 {{#isApiKey}}
 {{#isKeyInHeader}}
 	// set key with prefix in header
-	localVarHeaderParams["{{keyParamName}}"] = a.Configuration.GetAPIKeyWithPrefix("{{keyParamName}}")
+	localVarHeaderParams.Add("{{keyParamName}}", a.Configuration.GetAPIKeyWithPrefix("{{keyParamName}}"))
 {{/isKeyInHeader}}
 {{#isKeyInQuery}}
 	// set key with prefix in query string
-	localVarQueryParams["{{keyParamName}}"] =  a.Configuration.GetAPIKeyWithPrefix("{{keyParamName}}")
+	localVarQueryParams.Add("{{keyParamName}}", a.Configuration.GetAPIKeyWithPrefix("{{keyParamName}}"))
 {{/isKeyInQuery}}
 {{/isApiKey}}
 {{#isBasic}}
